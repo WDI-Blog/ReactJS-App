@@ -1,7 +1,15 @@
 import React, { useState } from "react";
 
 function randomColor() {
-  const colors = ["red", "green", "blue", "orange", "black", "deeppink"];
+  const colors = [
+    "red",
+    "green",
+    "blue",
+    "orange",
+    "black",
+    "deeppink",
+    "gray",
+  ];
   let randomIndex = Math.floor(Math.random() * colors.length);
   let color = colors[randomIndex];
   return color;
