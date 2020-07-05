@@ -84,11 +84,10 @@ export default function TodoList() {
     newTodos.splice(index, 1);
     setTodos(newTodos);
   };
-
   return (
     <div className="container mt-5">
       <div className="todo-list">
-        <h2>Welcome to {process.env.REACT_ENV_TEST}</h2>
+        <h2>{process.env.REACT_APP_API_URL}</h2>
         {todos.map((todo, index) => (
           <Todo
             key={index}
