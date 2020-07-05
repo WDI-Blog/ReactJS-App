@@ -11,9 +11,10 @@ import About from "./../About";
 import Contact from "./../Contact";
 import App1 from "./../App1/App1";
 import App2 from "./../App2";
+import App3 from "./../App3";
 import "./../../App.css";
-
 import NotFound from "./../NotFound";
+
 function Header() {
   return (
     <Router>
@@ -74,6 +75,16 @@ function Header() {
                 App2
               </NavLink>
             </li>
+            <li className="nav-item">
+              <NavLink
+                exact
+                className="nav-link"
+                activeClassName="activeLink"
+                to="/app3"
+              >
+                App3
+              </NavLink>
+            </li>
           </ul>
         </div>
       </nav>
@@ -83,6 +94,7 @@ function Header() {
         <Route path="/contact" component={Contact} />
         <Route exact path="/app1" component={App1} />
         <Route exact path="/app2" component={App2} />
+        <Route exact path="/app3" component={App3} />
         <Route component={NotFound} />
       </Switch>
     </Router>
