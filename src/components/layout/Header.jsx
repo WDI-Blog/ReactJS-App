@@ -12,6 +12,8 @@ import Contact from "./../Contact";
 import App1 from "./../App1/App1";
 import App2 from "./../App2";
 import App3 from "./../App3";
+import App4 from "./../App4";
+import App5 from "./../App5";
 import "./../../App.css";
 import NotFound from "./../NotFound";
 
@@ -85,6 +87,26 @@ function Header() {
                 App3
               </NavLink>
             </li>
+            <li className="nav-item">
+              <NavLink
+                exact
+                className="nav-link"
+                activeClassName="activeLink"
+                to="/app4"
+              >
+                App4
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                exact
+                className="nav-link"
+                activeClassName="activeLink"
+                to="/app5"
+              >
+                App5
+              </NavLink>
+            </li>
           </ul>
         </div>
       </nav>
@@ -95,6 +117,8 @@ function Header() {
         <Route exact path="/app1" component={App1} />
         <Route exact path="/app2" component={App2} />
         <Route exact path="/app3" component={App3} />
+        <Route exact path="/app4" component={App4} />
+        <Route exact path="/app5" component={App5} />
         <Route component={NotFound} />
       </Switch>
     </Router>
