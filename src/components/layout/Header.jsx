@@ -14,6 +14,7 @@ import App2 from "./../App2";
 import App3 from "./../App3";
 import App4 from "./../App4";
 import App5 from "./../App5";
+import App6 from "./../App6";
 import "./../../App.css";
 import NotFound from "./../NotFound";
 
@@ -107,6 +108,16 @@ function Header() {
                 App5
               </NavLink>
             </li>
+            <li className="nav-item">
+              <NavLink
+                exact
+                className="nav-link"
+                activeClassName="activeLink"
+                to="/app6"
+              >
+                App6
+              </NavLink>
+            </li>
           </ul>
         </div>
       </nav>
@@ -119,6 +130,7 @@ function Header() {
         <Route exact path="/app3" component={App3} />
         <Route exact path="/app4" component={App4} />
         <Route exact path="/app5" component={App5} />
+        <Route exact path="/app6" component={App6} />
         <Route component={NotFound} />
       </Switch>
     </Router>

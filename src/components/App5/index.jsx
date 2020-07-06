@@ -8,7 +8,7 @@ export default function App5() {
     <div className="container mt-5">
       <div className="row">
         <div className="col-md-12">
-          <h3>useState with object</h3>
+          <h3>useState with previous state</h3>
           <HookCounterOne />
         </div>
         <div className="col-md-12 mt-5">
