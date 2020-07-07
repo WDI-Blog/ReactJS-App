@@ -11,7 +11,7 @@ import menus from "./menus";
 
 function Header() {
   function showContentMenus(routes) {
-    console.log(routes);
+    // console.log(routes);
     let result1 = null;
 
     if (routes.length > 0) {
@@ -29,15 +29,14 @@ function Header() {
     return result1;
   }
   function showMenus(menus) {
-    console.log(menus);
+    // console.log(menus);
     let result2 = null;
 
     if (menus.length > 0) {
       result2 = menus.map((item, index) => {
         return (
-          <li className="nav-item">
+          <li className="nav-item" key={index}>
             <NavLink
-              key={index}
               exact
               className="nav-link"
               activeClassName="activeLink"
@@ -95,19 +94,7 @@ function Header() {
           </ul>
         </div>
       </nav>
-      <Switch>
-        {/* <Route exact path="/" component={Home} />
-        <Route path="/about" component={About} />
-        <Route path="/contact" component={Contact} />
-        <Route exact path="/app1" component={App1} />
-        <Route exact path="/app2" component={App2} />
-        <Route exact path="/app3" component={App3} />
-        <Route exact path="/app4" component={App4} />
-        <Route exact path="/app5" component={App5} />
-        <Route exact path="/app6" component={App6} />
-        <Route component={NotFound} /> */}
-        {showContentMenus(routes)}
-      </Switch>
+      <Switch>{showContentMenus(routes)}</Switch>
     </Router>
   );
 }
