@@ -6,19 +6,52 @@ import {
   Route,
   NavLink,
 } from "react-router-dom";
-import Home from "./../Home";
-import About from "./../About";
-import Contact from "./../Contact";
-import App1 from "./../App1/App1";
-import App2 from "./../App2";
-import App3 from "./../App3";
-import App4 from "./../App4";
-import App5 from "./../App5";
-import App6 from "./../App6";
-import "./../../App.css";
-import NotFound from "./../NotFound";
+import routes from "./routes";
+import menus from "./menus";
 
 function Header() {
+  function showContentMenus(routes) {
+    console.log(routes);
+    let result1 = null;
+
+    if (routes.length > 0) {
+      result1 = routes.map((item, index) => {
+        return (
+          <Route
+            key={index}
+            exact={item.exact}
+            path={item.path}
+            component={item.main}
+          />
+        );
+      });
+    }
+    return result1;
+  }
+  function showMenus(menus) {
+    console.log(menus);
+    let result2 = null;
+
+    if (menus.length > 0) {
+      result2 = menus.map((item, index) => {
+        return (
+          <li className="nav-item">
+            <NavLink
+              key={index}
+              exact
+              className="nav-link"
+              activeClassName="activeLink"
+              to={item.to}
+            >
+              {item.name}
+            </NavLink>
+          </li>
+        );
+      });
+    }
+    return result2;
+  }
+
   return (
     <Router>
       <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
@@ -58,71 +91,12 @@ function Header() {
                 Contact
               </Link>
             </li>
-            <li className="nav-item">
-              <NavLink
-                exact
-                className="nav-link"
-                activeClassName="activeLink"
-                to="/app1"
-              >
-                App1
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                exact
-                className="nav-link"
-                activeClassName="activeLink"
-                to="/app2"
-              >
-                App2
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                exact
-                className="nav-link"
-                activeClassName="activeLink"
-                to="/app3"
-              >
-                App3
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                exact
-                className="nav-link"
-                activeClassName="activeLink"
-                to="/app4"
-              >
-                App4
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                exact
-                className="nav-link"
-                activeClassName="activeLink"
-                to="/app5"
-              >
-                App5
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                exact
-                className="nav-link"
-                activeClassName="activeLink"
-                to="/app6"
-              >
-                App6
-              </NavLink>
-            </li>
+            {showMenus(menus)}
           </ul>
         </div>
       </nav>
       <Switch>
-        <Route exact path="/" component={Home} />
+        {/* <Route exact path="/" component={Home} />
         <Route path="/about" component={About} />
         <Route path="/contact" component={Contact} />
         <Route exact path="/app1" component={App1} />
@@ -131,7 +105,8 @@ function Header() {
         <Route exact path="/app4" component={App4} />
         <Route exact path="/app5" component={App5} />
         <Route exact path="/app6" component={App6} />
-        <Route component={NotFound} />
+        <Route component={NotFound} /> */}
+        {showContentMenus(routes)}
       </Switch>
     </Router>
   );

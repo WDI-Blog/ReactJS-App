@@ -1,0 +1,17 @@
+GET http://localhost:3000/posts?_limit=3&_page=1
+###
+POST http://localhost:3000/posts
+Content-Type: application/json
+
+   {
+    "id": "52598311-58c4-03021992-tokyo07072020",
+    "title": "This is my post",
+    "author": "Hoang Nguyen",
+    "description": "minus est consectetur ratione fuga veniam officia qui neque nostrum id optio illo voluptate eos architecto dolorem unde ipsa quia consequatur et repellendus ab voluptates sequi non rerum nihil praesentium cupiditate dolores voluptas sunt est odit vel voluptates dolores cumque ut eaque et sequi et ipsam ut quis fugit et",
+    "createdAt": 1584839168728,
+    "updatedAt": 1584839168728,
+    "imageUrl": "https://picsum.photos/id/160/1368/400"
+  }
+###
+DELETE  http://localhost:3000/posts/52598311-58c4-hoangnguyen-tokyo07072020
+Content-Type: application/json
