@@ -24,7 +24,7 @@ function Pagination(props) {
     <div>
       <button
         type="button"
-        className="btn btn-primary"
+        className="btn btn-primary mr-3"
         disabled={_page <= 1}
         onClick={() => handlePageChange(_page - 1)}
       >

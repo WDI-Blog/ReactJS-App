@@ -4,6 +4,7 @@ import Pagination from "./Pagination";
 import queryString from "query-string";
 import PostFiltersForm from "./PostFiltersForm";
 import Input from "./Input";
+import Clock from "./Clock";
 
 function App6() {
   const [postList, setPostList] = useState([]);
@@ -16,6 +17,7 @@ function App6() {
     _page: 1,
     _limit: 10,
   });
+  const [nowPage, setNowPage] = useState("1");
 
   useEffect(() => {
     async function fetchPostList() {
@@ -46,6 +48,7 @@ function App6() {
       ...filters,
       _page: newPage,
     });
+    setNowPage(newPage);
   }
   function handleFilterChange(newFilters) {
     console.log("New Filters : ", newFilters);
@@ -55,14 +58,23 @@ function App6() {
       title_like: newFilters.searchTerm,
     });
   }
-
+  const [showClock, setShowClock] = useState(true);
   return (
     <div className="container mt-5">
       <h1>ReactJS useEffect / useRef / useDebounce</h1>
       <PostFiltersForm onSubmit={handleFilterChange} />
       <PostList posts={postList} />
+      <h4 className="text-primary">{nowPage}</h4>
       <Pagination pagination={pagination} onPageChange={handlePageChange} />
       <Input />
+      {showClock && <Clock />}
+      <button
+        type="button"
+        className="btn btn-danger"
+        onClick={() => setShowClock(false)}
+      >
+        Delete Clock
+      </button>
       <div style={{ height: "10rem" }}></div>
     </div>
   );

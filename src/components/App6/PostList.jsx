@@ -12,11 +12,11 @@ function PostList(props) {
   const { posts } = props;
 
   return (
-    <ul>
+    <ol>
       {posts.map((post) => (
         <li key={post.id}>{post.title}</li>
       ))}
-    </ul>
+    </ol>
   );
 }
 
