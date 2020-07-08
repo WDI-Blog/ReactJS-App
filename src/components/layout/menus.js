@@ -23,5 +23,9 @@ const menus = [
     to: "/app6",
     name: "App6",
   },
+  {
+    to: "/app7",
+    name: "App7",
+  },
 ];
 export default menus;

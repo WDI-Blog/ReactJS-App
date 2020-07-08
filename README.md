@@ -46,3 +46,28 @@ npm i --save query-string
 #
 
 > Biết cách sử dụng của query-string
+
+# App 7
+
+- useEffect
+- axios
+
+[Link Video Youtube](https://www.youtube.com/watch?v=IYCa1F-OWmk&list=PLillGF-RfqbY3c2r0htQyVbDJJoBFE6Rb&index=9)
+
+```
+npm install axios
+```
+
+> Làm pagination thủ công
+
+#
+
+> Tính toán lượng số posts tương ứng ở trang hiện tại
+
+#
+
+> Sử dụng vòng lặp for tạo mảng in ra số trang
+
+#
+
+> Ôn tập cách sử dụng slice

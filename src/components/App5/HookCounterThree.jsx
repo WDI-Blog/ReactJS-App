@@ -20,7 +20,7 @@ export default function HookCounterThree() {
       >
         Add Number
       </button>
-      <ul class="list-group">
+      <ul className="list-group">
         {items.map((item) => {
           return (
             <li class="list-group-item" key={item.id}>
